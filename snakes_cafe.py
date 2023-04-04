@@ -30,15 +30,14 @@ orders = []
 
 while True:
     order = input("** What would you like to order? ** ")
-    if order == 'quit':
-        break
-    elif order == 'exit':
+    if order == 'quit' or order == 'exit':
         break
     elif order in [item for sublist in menu.values() for item in sublist]:
         orders.append(order)
-        print(f"** {len(orders)} order of {order} have been added to your meal **")
+        count = orders.count(order)
+        print(f"** {count} order of {order} have been added to your meal **")
     else:
-        print("** Sorry, what your ordered is not on the menu. **")
+        print("** Sorry, what you ordered is not on the menu. **")
 
 
 print("**************************************")
